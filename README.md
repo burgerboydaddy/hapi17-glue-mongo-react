@@ -1,4 +1,4 @@
-# HAPI-GLUE-MANIFEST-MONGO TEMPLATE
+# HAPI-GLUE-MONGO-REACT TEMPLATE
 Template as application start point using hapi 17, glue, mongoDb native driver 3.x, and react (16.x)
 
 Please see package.json for app requirements.
