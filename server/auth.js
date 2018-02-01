@@ -12,17 +12,20 @@ const internals = {
 
 // bring your own validation function
 const validate = async function (decoded, request) {
-  console.log('decoded:', decoded);
-  const isInvalid = await InvalidKey.findByKey(decoded.key);
-  if (isInvalid) {
+  try {
+    const isInvalid = await InvalidKey.findByKey(decoded.key);
+    if (isInvalid) {
+      return { isValid: false };
+    }
+    const user = JSON.parse(decoded.user);
+    // do your checks to see if the person is valid
+    if (!internals.people[user.id]) {
+      return { isValid: false };
+    }
+    return { isValid: true };
+  } catch (error) {
     return { isValid: false };
   }
-  const user = JSON.parse(decoded.user);
-  // do your checks to see if the person is valid
-  if (!internals.people[user.id]) {
-    return { isValid: false };
-  }
-  return { isValid: true };
 };
 
 exports.plugin = {
