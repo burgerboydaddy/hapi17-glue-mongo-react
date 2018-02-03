@@ -1,0 +1,6 @@
+{
+  "ignore": [
+    "server/api/*.js",
+    "server/models/*.js"
+  ]
+}

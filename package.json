@@ -19,7 +19,9 @@
   "homepage": "https://github.com/burgerboydaddy/hapi17-glue-mongo-react",
   "author": "Vladimir Ilic",
   "dependencies": {
+    "bcrypt": "1.0.3",
     "boom": "7.1.1",
+    "bounce": "1.2.0",
     "calibrate": "4.0.0",
     "catbox-memory": "3.1.1",
     "catbox-redis": "4.0.0",
@@ -36,6 +38,7 @@
     "hapi-react-views": "10.0.0",
     "inert": "5.1.0",
     "joi": "13.1.1",
+    "joi-objectid": "^2.0.0",
     "jsonwebtoken": "8.1.1",
     "mongo-models": "^2.0.2",
     "mongo-uri": "0.1.2",
@@ -43,6 +46,7 @@
     "react": "16.2.x",
     "react-dom": "16.2.x",
     "shortid": "2.2.8",
+    "slug": "0.9.1",
     "vision": "5.3.1"
   },
   "devDependencies": {

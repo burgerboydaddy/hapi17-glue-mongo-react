@@ -3,6 +3,11 @@
 const Joi = require('joi');
 const MongoModels = require('mongo-models');
 
+const schema = Joi.object({
+  _id: Joi.object(),
+  key: Joi.string().required(),
+  expire: Joi.date().required(),
+});
 
 class InvalidKey extends MongoModels {
   static create(key, expire) {
@@ -19,20 +24,11 @@ class InvalidKey extends MongoModels {
   }
 }
 
-
 InvalidKey.collectionName = 'invalidKeys';
-
-
-InvalidKey.schema = Joi.object().keys({
-  _id: Joi.object(),
-  key: Joi.string().required(),
-  expire: Joi.date().required(),
-});
-
+InvalidKey.schema = schema;
 
 InvalidKey.indexes = [
   { key: { key: 1 } },
 ];
-
 
 module.exports = InvalidKey;
